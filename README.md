@@ -1,8 +1,20 @@
-# Oreo Mcflurry
-CSCI275
+# 🍦 Oreo McFlurry — CSCI 275
 
-* BORIGAS EDRIEN GAPPI 815023
-* KAUR RAJVIR 817172
-* NGWIRA VITUMBIKO 817173
-* SINGH GURSHARN SANGHA 815612
-* KAUR RAMANJEET 816695
+## Team Members
+| Student | ID |
+|---|---|
+| Borigas, Edrien Gappi | 815023 |
+| Kaur, Rajvir | 817172 |
+| Ngwira, Vitumbiko | 817173 |
+| Singh, Gursharn Sangha | 815612 |
+| Kaur, Ramanjeet | 816695 |
+
+## Tech Stack
+
+### Frontend
+- **React**
+
+### Backend
+- **Node.js** + **Express**
+- **Prisma ORM**
+- **PostgreSQL** *(Database)*
