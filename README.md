@@ -23,7 +23,7 @@
 
 ## Work Division
 
-### Person 1 — Edrien Borigas
+### 1) Edrien Borigas
 - Database schema, Express server, Prisma + PostgreSQL setup
 - API routes for restaurants and favorites
 - Seed database with sample data
