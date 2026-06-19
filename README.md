@@ -21,6 +21,16 @@
 
 ---
 
+## Other Module Repos
+| Module | Repo |
+|---|---|
+| Baseem | [csci275-teamc](https://github.com/baseemali/csci275-teamc) |
+| Edrien (this repo) | [Oreo-Mcflurry](https://github.com/edrienborigas2003-cloud/Oreo-Mcflurry) |
+| Amrit | [CSCI-275](https://github.com/engineer-amrit/CSCI-275) |
+| Jethro | [404Error](https://github.com/jethromorera/404Error) |
+
+---
+
 ## Work Division
 
 ### 1) Edrien Borigas
@@ -62,22 +72,4 @@
 | FR-DS-UI-030 | Favorites Persistence |
 | FR-DS-UI-031 | Visual Saved State |
 | FR-DS-UI-032 | Favorites List Access |
-| FR-DS-UI-033 | Share Button |
-| FR-DS-UI-034 | Copy Link Action |
-| FR-DS-UI-035 | Copy Confirmation |
-| FR-DS-UI-036 | Guest Sharing |
-
----
-
-## Non-Functional Requirements
-These are quality standards the whole team follows:
-
-| NFR ID | Requirement |
-|---|---|
-| NFR-DS-001 | Search results load within 2 seconds |
-| NFR-DS-003 | Search, filters, and sort all on one page |
-| NFR-DS-004 | Responsive on desktop, tablet, and mobile |
-| NFR-DS-006 | ARIA labels for accessibility |
-| NFR-DS-007 | Backend handles up to 10,000 listings |
-| NFR-DS-008 | Works on Chrome, Firefox, Edge |
-| NFR-DS-009 | Clear error messages for invalid input |
+| FR-DS-UI-033
