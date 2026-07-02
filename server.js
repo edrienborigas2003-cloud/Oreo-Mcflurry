@@ -9,6 +9,11 @@ const port = 3000;
 
 app.use(express.json());
 
+// Routes
+app.use('/restaurants', require('./routes/restaurants'));
+app.use('/favorites', require('./routes/favorites'));
+
+// Test route
 app.get('/', (req, res) => {
   res.send('Website is working.');
 });
