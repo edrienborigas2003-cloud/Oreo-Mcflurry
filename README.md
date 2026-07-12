@@ -56,7 +56,7 @@
 | FR-DS-SF-012 | Minimum Rating Filter |
 | FR-DS-SF-019 | Global Clear All Filters |
 
-### Person 4 — Sort & Display
+### 4) Gursharn S. Sangha — Sort & Display
 | Req. ID | Feature |
 |---|---|
 | FR-DS-SF-013 | Rating Display |
