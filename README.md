@@ -5,7 +5,7 @@
 |---|---|
 | Borigas, Edrien Gappi | 815023 |
 | Kaur, Rajvir | 817172 |
-| Ngwira, Vitumbiko | 817173 |
+| Ngwira, Vitumbiko | 817172 |
 | Singh, Gursharn Sangha | 815612 |
 | Kaur, Ramanjeet | 816695 |
 
@@ -47,7 +47,7 @@
 | FR-DS-SF-004 | Empty Search State |
 | FR-DS-SF-005 | No Results State |
 
-### Person 3 — Filters
+###3) Vitumbiko Ngwira — Filters
 | Req. ID | Feature |
 |---|---|
 | FR-DS-SF-006 | Cuisine Filter Options |
