@@ -4,7 +4,7 @@
 | Student | ID |
 |---|---|
 | Borigas, Edrien Gappi | 815023 |
-| Kaur, Rajvir | 817172 |
+| Kaur, Rajvir | 816815 |
 | Ngwira, Vitumbiko | 817172 |
 | Singh, Gursharn Sangha | 815612 |
 | Kaur, Ramanjeet | 816695 |
@@ -38,7 +38,7 @@
 - API routes for restaurants and favorites
 - Seed database with sample data
 
-### Person 2 — Search & Results
+### 2) Rajvir Kaur — Search & Results
 | Req. ID | Feature |
 |---|---|
 | FR-DS-SF-001 | Keyword Search Input |
