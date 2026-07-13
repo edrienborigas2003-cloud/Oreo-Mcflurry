@@ -47,7 +47,7 @@
 | FR-DS-SF-004 | Empty Search State |
 | FR-DS-SF-005 | No Results State |
 
-## Vitumbiko Ngwira — Filters
+### 3) Vitumbiko Ngwira — Filters
 | Req. ID | Feature |
 |---|---|
 | FR-DS-SF-006 | Cuisine Filter Options |
