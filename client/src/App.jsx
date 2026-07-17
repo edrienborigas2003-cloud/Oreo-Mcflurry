@@ -1,121 +1,92 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [restaurants, setRestaurants] = useState([])
+  const [sort, setSort] = useState('rating')
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+    async function loadRestaurants() {
+      try {
+        setLoading(true)
+        setError('')
+
+        const response = await fetch(
+          `http://localhost:3000/restaurants?sort=${sort}`
+        )
+
+        if (!response.ok) {
+          throw new Error('Could not load restaurants')
+        }
+
+        const data = await response.json()
+        setRestaurants(data)
+      } catch (err) {
+        setError(err.message)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    loadRestaurants()
+  }, [sort])
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
+    <main className="app">
+      <header className="page-header">
         <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+          <p className="eyebrow">Restaurant Discovery</p>
+          <h1>Find your next meal</h1>
+          <p className="subtitle">
+            Browse restaurants and sort them by rating or newest.
           </p>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
 
-      <div className="ticks"></div>
+        <label className="sort-control">
+          <span>Sort by</span>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+          <select
+            value={sort}
+            onChange={(event) => setSort(event.target.value)}
+          >
+            <option value="rating">Highest rated</option>
+            <option value="newest">Newest</option>
+          </select>
+        </label>
+      </header>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      {loading && <p className="status">Loading restaurants...</p>}
+
+      {error && <p className="status error">{error}</p>}
+
+      {!loading && !error && (
+        <section className="restaurant-grid">
+          {restaurants.map((restaurant) => (
+            <article className="restaurant-card" key={restaurant.id}>
+              <div className="card-top">
+                <span className="cuisine">{restaurant.cuisine}</span>
+
+                <span className="rating">
+                  <span aria-hidden="true">★</span>
+                  {Number(restaurant.rating).toFixed(1)}
+                </span>
+              </div>
+
+              <h2>{restaurant.name}</h2>
+
+              <p className="description">{restaurant.description}</p>
+
+              <div className="restaurant-details">
+                <span>{restaurant.location}</span>
+                <span>{restaurant.price}</span>
+              </div>
+            </article>
+          ))}
+        </section>
+      )}
+    </main>
   )
 }
 
