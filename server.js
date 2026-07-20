@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const { PrismaClient } = require('@prisma/client');
 const { PrismaPg } = require('@prisma/adapter-pg');
 
@@ -7,6 +8,7 @@ const prisma = new PrismaClient({ adapter });
 const app = express();
 const port = 3000;
 
+app.use(cors());
 app.use(express.json());
 
 // Routes
