@@ -4,8 +4,8 @@
 | Student | ID |
 |---|---|
 | Borigas, Edrien Gappi | 815023 |
-| Kaur, Rajvir | 817172 |
-| Ngwira, Vitumbiko | 817173 |
+| Kaur, Rajvir | 816815 |
+| Ngwira, Vitumbiko | 817172 |
 | Singh, Gursharn Sangha | 815612 |
 | Kaur, Ramanjeet | 816695 |
 
@@ -38,7 +38,7 @@
 - API routes for restaurants and favorites
 - Seed database with sample data
 
-### Person 2 — Search & Results
+### 2) Rajvir Kaur — Search & Results
 | Req. ID | Feature |
 |---|---|
 | FR-DS-SF-001 | Keyword Search Input |
@@ -47,7 +47,7 @@
 | FR-DS-SF-004 | Empty Search State |
 | FR-DS-SF-005 | No Results State |
 
-### Person 3 — Filters
+### 3) Vitumbiko Ngwira — Filters
 | Req. ID | Feature |
 |---|---|
 | FR-DS-SF-006 | Cuisine Filter Options |
@@ -56,7 +56,7 @@
 | FR-DS-SF-012 | Minimum Rating Filter |
 | FR-DS-SF-019 | Global Clear All Filters |
 
-### Person 4 — Sort & Display
+### 4) Gursharn S. Sangha — Sort & Display
 | Req. ID | Feature |
 |---|---|
 | FR-DS-SF-013 | Rating Display |
