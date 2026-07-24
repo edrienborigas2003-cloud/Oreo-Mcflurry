@@ -1,23 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Search.css";
+
+const API_URL = "http://localhost:3000";
 
 function Search() {
   const [search, setSearch] = useState("");
   const [restaurants, setRestaurants] = useState([]);
   const [searched, setSearched] = useState(false);
 
-  function searchRestaurants(event) {
-    event.preventDefault();
-
-    // Empty search state
-    if (search.trim() === "") {
-      setRestaurants([]);
-      setSearched(false);
-      return;
-    }
-
-    fetch(`http://localhost:3000/restaurants?search=${encodeURIComponent(search)}`)
+  function fetchRestaurants(query) {
+    const url = query
+      ? `${API_URL}/restaurants?search=${encodeURIComponent(query)}`
+      : `${API_URL}/restaurants`;
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setRestaurants(data);
@@ -26,10 +22,19 @@ function Search() {
       .catch((err) => console.error(err));
   }
 
+  // Empty search state: show all listings (FR-DS-SF-004)
+  useEffect(() => {
+    fetchRestaurants("");
+  }, []);
+
+  function searchRestaurants(event) {
+    event.preventDefault();
+    fetchRestaurants(search.trim());
+  }
+
   function clearSearch() {
     setSearch("");
-    setRestaurants([]);
-    setSearched(false);
+    fetchRestaurants("");
   }
 
   return (
