@@ -66,7 +66,7 @@ function Search() {
         )}
 
         {searched && restaurants.length === 0 && (
-          <p>No restaurants found. Try another search.</p>
+          <p>No restaurants found. Try broadening your search.</p>
         )}
 
         {searched && restaurants.length > 0 && <h2>Search Results</h2>}
